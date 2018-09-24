@@ -1,0 +1,106 @@
+/* 
++-------------------------------------------------------------------+  
+| = : = : = : = : = : = : = : = : = : = : = : = : = : = : = : = : = |
+|{>/-------------------------------------------------------------\<}|
+|: |                                                             | :| 
+| :|                 C program by Breanne Ludovice               |: | 
+|: |                                                             | :|
+| :|                   CS1310 September 27, 2018                 |: |
+|: |                                                             | :| 
+| :|                Assignment: Practice 6, Switch               |: | 
+|: |                                                             | :|
+| :|                             _ _                             |: | 
+|: |                           _{ ' }_                           | :| 
+| :|                          { `.!.` }                          |: |
+|: |                          ',_/Y\_,'                          | :| 
+| :|                            {_,_}                            |: | 
+|: |                              |                              | :|
+| :|                            (\|  /)                          |: | 
+|: |                             \| //                           | :|
+| :|                              |//                            |: |
+|: |                           \\ |/  //                         | :|
+| :|                        ^^^^^^^^^^^^^^^                      |: |
+|{>\-------------------------------------------------------------/<}|
+| = : = : = : = : = : = : = : = : = : = : = : = : = : = : = : = : = |
++-------------------------------------------------------------------+
+*/
+#include <stdio.h>
+
+
+double get_number (void)
+{
+ double number;
+ 
+ printf ("Please type in a number then enter:  ");
+ scanf ("%lf", &number);
+ printf ("The number you entered is %lf.\n\n", number);	
+ return number;
+}
+
+
+
+double print_smallnum (double a, double b, double c, double d, double e)
+{
+ if (a < b && a < c && a < d && a < e)
+    {
+     printf ("\n%lf is the smallest number.\n", a);
+	}
+	 else if (b < a && b < c && b < d && b < e)
+	 {
+	 printf ("\n%lf is the smallest number.\n", b);	
+	 }
+	  else if (c < a && c < b && c < d && c < e)
+	  {
+	   printf ("\n%lf is the smallest number.\n", c);
+	  }
+	   else if (d < a && d < b && d < c && d < e)
+	   {
+	   	printf ("\n%lf is the smallest number.\n", d);
+	   }
+	    else if (e < a && e < b && e < c && e < d)
+	    {
+	     printf ("\n%lf is the smallest number.\n", e);	
+	    }
+}
+
+
+
+void main (void)
+{
+ double a, b, c, d, e;   /* five values the user enters */	
+ int selection;   /* number user enters to select a choice in the menu */
+ 
+ printf ("This program allows the user to enter five numbers and choose between finding the following:\n"
+ 		 "Smallest number, Largest number, Sum of numbers, or Average of numbers.\n\n");
+ 
+ a = get_number();
+ b = get_number();
+ c = get_number();
+ d = get_number();
+ e = get_number();
+ 
+ printf ("\nThe five numbers you entered are: %lf, %lf, %lf, %lf, and %lf.\n\n\n", a, b, c, d, e);
+ 
+ printf ("Please select one of the choices below:\n");
+ printf (" 1. Determine smallest number\n"
+ 		 " 2. Determine largest number\n"
+ 		 " 3. Find sum of all numbers\n"
+ 		 " 4. Find average of all numbers\n"
+ 		 " 5. Quit program\n\n");
+ printf ("Type 1, 2, 3, 4, or 5 then press enter:  ");
+ scanf ("%i", &selection);
+ printf ("\nYou entered %i.", selection);
+ 
+ switch (selection)
+ {
+ case 1:
+ 		print_smallnum (a, b, c, d, e);
+ 		break;
+ case 2:
+ 		print_largenum (a, b, c, d, e);
+ 		break;
+ 			
+ }
+ 		
+ 
+}
