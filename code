@@ -39,7 +39,7 @@ double get_number (void)
 
 
 
-double print_smallnum (double a, double b, double c, double d, double e)
+double print_smallnum (double a, double b, double c, double d, double e)   /* determines the smallest number */
 {
  if (a < b && a < c && a < d && a < e)
     {
@@ -65,10 +65,44 @@ double print_smallnum (double a, double b, double c, double d, double e)
 
 
 
+double print_largenum (double a, double b, double c, double d, double e)   /* determines the largest number */
+{
+ if (a > b && a > c && a > d && a > e)
+    {
+     printf ("\n%lf is the largest number.\n", a);
+	}
+	 else if (b > a && b > c && b > d && b > e)
+	 {
+	 printf ("\n%lf is the largest number.\n", b);	
+	 }
+	  else if (c > a && c > b && c > d && c > e)
+	  {
+	   printf ("\n%lf is the largest number.\n", c);
+	  }
+	   else if (d > a && d > b && d > c && d > e)
+	   {
+	   	printf ("\n%lf is the largest number.\n", d);
+	   }
+	    else if (e > a && e > b && e > c && e > d)
+	    {
+	     printf ("\n%lf is the largest number.\n", e);	
+	    }
+}
+
+
+
+double print_sum (double a, double b, double c, double d, double e)   /* finds the sum of the numbers */
+{
+ double sum;
+ sum = a + b + c + d + e;
+ printf ("\nThe sum of the numbers is %lf.\n", sum);	
+}
+
+
 void main (void)
 {
  double a, b, c, d, e;   /* five values the user enters */	
- int selection;   /* number user enters to select a choice in the menu */
+ int input;   /* number user enters to select a choice in the menu */
  
  printf ("This program allows the user to enter five numbers and choose between finding the following:\n"
  		 "Smallest number, Largest number, Sum of numbers, or Average of numbers.\n\n");
@@ -88,10 +122,10 @@ void main (void)
  		 " 4. Find average of all numbers\n"
  		 " 5. Quit program\n\n");
  printf ("Type 1, 2, 3, 4, or 5 then press enter:  ");
- scanf ("%i", &selection);
- printf ("\nYou entered %i.", selection);
+ scanf ("%i", &input);
+ printf ("\nYou entered %i.", input);
  
- switch (selection)
+ switch (input)
  {
  case 1:
  		print_smallnum (a, b, c, d, e);
@@ -99,6 +133,19 @@ void main (void)
  case 2:
  		print_largenum (a, b, c, d, e);
  		break;
+ case 3:
+ 		print_sum (a, b, c, d, e);
+ 		break;
+ case 4:
+ 		
+ 		break;
+ case 5:
+ 		
+ 		break;
+ default:
+ 		printf ("\nInvalid choice. Please run program again.\n");
+ 		
+ 		
  			
  }
  		
