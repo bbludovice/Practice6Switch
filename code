@@ -99,6 +99,16 @@ double print_sum (double a, double b, double c, double d, double e)   /* finds t
 }
 
 
+
+double print_average (double a, double b, double c, double d, double e)   /* finds the average of the numbers */
+{
+ double average;
+ average = (a + b + c + d + e)/5;
+ printf ("\nThe average of the numbers is %lf.\n", average);	
+}
+
+
+
 void main (void)
 {
  double a, b, c, d, e;   /* five values the user enters */	
@@ -137,7 +147,7 @@ void main (void)
  		print_sum (a, b, c, d, e);
  		break;
  case 4:
- 		
+ 		print_average (a, b, c, d, e);
  		break;
  case 5:
  		
