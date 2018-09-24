@@ -27,7 +27,7 @@
 #include <stdio.h>
 
 
-double get_number (void)
+double get_number (void)   /* returns the number the user enters */
 {
  double number;
  
@@ -150,14 +150,9 @@ void main (void)
  		print_average (a, b, c, d, e);
  		break;
  case 5:
- 		
+ 		printf ("\nGoodbye!");
  		break;
  default:
- 		printf ("\nInvalid choice. Please run program again.\n");
- 		
- 		
- 			
+ 		printf ("\nInvalid choice. Please run program again.\n");			
  }
- 		
- 
 }
